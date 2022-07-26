@@ -50,6 +50,9 @@
     text-align: center;
     justify-content: center ;
     flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
     /* margin:10 0 10 0px; */
   }
 
@@ -60,7 +63,7 @@
     box-sizing: border-box; 
     width:45%;
     margin:10px;
-    max-width: 590px;
+    /* max-width: 590px; */
     box-sizing: border-box;
     height: 100px;
   } 
