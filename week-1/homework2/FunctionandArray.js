@@ -5,7 +5,7 @@ function max(numbers) {
       maxNum = numbers[i];
     }
   }
-  return maxnum;
+  return maxNum;
 }
 
 console.log(max([1, 2, 4, 5]));
