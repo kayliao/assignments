@@ -153,3 +153,15 @@ button:hover {
   /* Green */
   color: white;
 }
+
+.progressbar{
+  background-color:blanchedalmond;
+  width:1000px;
+  height:20px;
+}
+
+/* .barvalue{
+  background-color:green;
+  width:100px;
+  height:20px;
+} */

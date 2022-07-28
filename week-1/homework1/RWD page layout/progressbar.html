@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <style >
+    .barvalue{
+        background-color:green ;
+        width:10px; 
+        height:20px
+    }
+    </style>  -->
+</head>
+<div class="progressbar">
+    <div class="barvalue" style = "background-color:green ;width:10px; height:20px">
+        <script>
+            // for(let i = 0; i <= 1000; i++)
+            // {
+                // let value=i*1;
+                // let strvalue = +value + "px";
+                // console.log(strvalue);
+                let strvalue = 0;
+                setInterval(()=>{
+                    if(strvalue <= 1000)
+                    {
+                    strvalue++
+                    document.getElementsByClassName('barvalue')[0].style.width = strvalue;
+                    }
+                },100);
+
+                // document.getElementsByClassName('barvalue')[0].style.width = strvalue;
+            //};
+        </script>
+    </div>
+</div>
