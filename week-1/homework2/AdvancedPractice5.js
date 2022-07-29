@@ -1,12 +1,12 @@
 function practice_5(students, student_objects) {
-  let result = student_objects.reduce((ans, current) => {
+  const result = student_objects.reduce((ans, current) => {
     const index = ans.findIndex((object) => {
-      return object.student_id === current["student_id"];
+      return object.student_id === current.student_id;
     });
     if (!ans[index].hasOwnProperty("object")) {
-      ans[index]["object"] = [current["object"]];
+      ans[index].object = [current.object];
     } else {
-      ans[index]["object"].push(current["object"]);
+      ans[index].object.push(current.object);
     }
     return ans;
   }, students);

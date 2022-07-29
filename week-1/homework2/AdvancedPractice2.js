@@ -1,5 +1,5 @@
 function practice_2(input, mapping) {
-  let result = arr.map((value) => {
+  const result = arr.map((value) => {
     return mapping[value];
   });
   return result;

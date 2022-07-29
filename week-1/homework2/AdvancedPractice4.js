@@ -1,5 +1,5 @@
 function practice_4(input) {
-  let result = input.reduce((ans, current) => {
+  const result = input.reduce((ans, current) => {
     if (!ans.hasOwnProperty(current.key)) {
       ans[current.key] = current.value;
       return ans;
