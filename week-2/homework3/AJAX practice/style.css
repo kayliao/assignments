@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.box {
+  /* background: rgb(180, 123, 53); */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+
+img {
+  float: left;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  align-self: center;
+}
+
+.itemPrice {
+  background: lightgoldenrodyellow;
+  width: 20vw;
+  text-align: center;
+  flex: 50%;
+}
+
+.itemImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemName {
+  background: rgb(41, 157, 76);
+  width: 100%;
+  text-align: center;
+}
+
+.itemDescription {
+  background: lightgoldenrodyellow;
+  flex: 50%;
+}
+
+.itemString {
+  display: flex;
+}

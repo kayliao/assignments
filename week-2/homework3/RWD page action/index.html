@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="topnav">
+    <a class="homelogo" href="#">Website Title/Logo</a>
+    <a class="items" href="#">Item1</a>
+    <a class="items" href="#">Item2</a>
+    <a class="items" href="#">Item3</a>
+    <a class="items" href="#">Item4</a>
+    <a class="icon" href="javascript:void(0);" onclick="showList()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="menu">
+    <button type="button" onclick="closeMenu()" class="items close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a class="items" href="#">Item1</a>
+    <a class="items" href="#">Item2</a>
+    <a class="items" href="#">Item3</a>
+    <a class="items" href="#">Item4</a>
+  </div>
+
+  <section>
+    <div class="welcomeBox">
+      <h1>Welcome Message</h1>
+    </div>
+  </section>
+
+  <section class="contentLayer">
+    <h3 style="text-align: center; margin-bottom: 20px">Section Title</h3>
+
+    <div class="container">
+      <div class="box">Contentbox1</div>
+      <div class="box">Contentbox2</div>
+      <div class="box">Contentbox3</div>
+      <div class="box">Contentbox4</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="btnaction">
+      <button type="button" onclick="showMoreContent()">
+        Show More Content
+      </button>
+    </div>
+  </section>
+
+  <section class="hiddenContent">
+    <div class="container">
+      <div class="box">Contentbox5</div>
+      <div class="box">Contentbox6</div>
+      <div class="box">Contentbox7</div>
+      <div class="box">Contentbox8</div>
+    </div>
+  </section>
+
+  <script src="action.js"></script>
+</body>
