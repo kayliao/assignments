@@ -6,8 +6,8 @@ welcomeBlock.addEventListener(
 );
 
 function showMoreContent() {
-  let hidden = document.querySelector(".hiddenContent");
-  let butt = document.querySelector(".btnaction button");
+  const hidden = document.querySelector(".hiddenContent");
+  const butt = document.querySelector(".btnaction button");
   if (hidden.style.display === "block") {
     hidden.style.display = "none";
     butt.textContent = "Show More Content";
@@ -18,11 +18,11 @@ function showMoreContent() {
 }
 
 function showList() {
-  let open = document.querySelector(".menu");
+  const open = document.querySelector(".menu");
   open.style.display = "block";
 }
 
 function closeMenu() {
-  let close = document.querySelector(".menu");
+  const close = document.querySelector(".menu");
   close.style.display = "none";
 }
