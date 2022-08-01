@@ -34,26 +34,6 @@ function render(data) {
     .join(" ");
 }
 
-// const cardContainer = document.querySelector(".card-container");
-
-// function render(data) {
-//   cardContainer.innerHTML = data
-//     .map(
-//       (card) => `
-//       <div class="card">
-//         <div class="card-body">
-//           <h1 class="item-name">${card.name}</h1>
-//           <p class="item-description">${card.description}</p>
-//         </div>
-//         <div class="card-footer">
-//           <button class="item-button">${card.price}</button>
-//         </div>
-//       </div>
-//   `
-//     )
-//     .join("");
-// }
-
 ajax("https://appworks-school.github.io/Remote-Aassigiment-Data/products").then(
   (data) => render(data)
 );
