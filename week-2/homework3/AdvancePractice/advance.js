@@ -1,6 +1,6 @@
 const print_result = document.querySelector(".repo_list");
-var count_page = 1;
-var first_time = true;
+let count_page = 1;
+let first_time = true;
 
 function ajax(src) {
   return fetch(src)
