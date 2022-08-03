@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./week-2/homework3/AdvancePractice/advance.js"
+    "lint": "eslint ./week-2/homework4/'Your First Web Server'/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +17,5 @@
   "bugs": {
     "url": "https://github.com/kayliao/assignments/issues"
   },
-  "homepage": "https://github.com/kayliao/assignments#readme",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "@typescript-eslint/parser": "^5.32.0",
-    "eslint": "^8.21.0",
-    "eslint-plugin-react": "^7.30.1"
-  }
+  "homepage": "https://github.com/kayliao/assignments#readme"
 }
