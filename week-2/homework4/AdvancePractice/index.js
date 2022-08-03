@@ -29,22 +29,6 @@ app.get("/trackName", (request, response) => {
 app.post("/trackName", (request, response) => {
 	response.cookie("username", request.body.username);
 	response.redirect("/myName");
-	// response.render("index");
-	// response.send("Hello, My Server!");
-});
-
-app.get("/trackName", (request, response) => {
-	let result;
-	if (Object.keys(request.query).length === 0) result = "Lack of Parameter";
-	else {
-		if (isNaN(request.query.name)) {
-			result = "Wrong Parameter";
-		} else {
-			result =
-				((1 + Number(request.query.number)) * Number(request.query.number)) / 2;
-		}
-	}
-	response.send(`${result}`);
 });
 
 app.listen(3000);
