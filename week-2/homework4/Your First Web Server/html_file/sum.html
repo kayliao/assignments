@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      let num = prompt(
+        "please enter a number. \
+        \nIt will show the answer of 1+2+..+n",
+        5
+      );
+
+      async function get_num() {
+        fetch(`http://localhost:3000/getData?number=${num}`)
+          .then((response) => response.json())
+          .then((result) => {
+            document.querySelector("h1").textContent = result;
+            console.log(res.data);
+          })
+          .catch((error) => {
+            console.log("Error status", error);
+          });
+
+        return;
+      }
+      get_num();
+    </script>
+  </body>
+</html>
