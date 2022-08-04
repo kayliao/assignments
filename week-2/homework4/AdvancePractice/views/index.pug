@@ -6,7 +6,8 @@ html(lang='en')
     if name
       h1 #{name}
     else
-      form(action='/trackName',method='post')
+      //form(action='/trackName',method='post')
+      form(action='/trackName',method='get')
         label Please enter your name: 
           input(type='text',name='username')
         button(type='submit') Submit
