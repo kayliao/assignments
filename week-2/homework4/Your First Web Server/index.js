@@ -14,7 +14,8 @@ app.use(express.static("html_file"));
 
 app.get("/getData", (req, res) => {
 	let result;
-	if (Object.keys(req.query).length === 0) result = "Lack of Parameter";
+	if (Object.keys(req.query).length === 0 || req.query.number === "")
+		result = "Lack of Parameter";
 	else {
 		if (isNaN(req.query.number)) {
 			result = "Wrong Parameter";
