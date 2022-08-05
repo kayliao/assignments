@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Hello World</title>
+		<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+		<!-- Don't use this in production: -->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			class TopNav extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { isToggleOn: this.props.isFlag };
+				}
+
+				render() {
+					console.log(this.props.isFlag);
+					if (!this.props.isFlag) {
+						return (
+							<div className="topnav">
+								<a className="homelogo" href="#">
+									Website Title/Logo
+								</a>
+								<a className="items" href="#">
+									Item1
+								</a>
+								<a className="items" href="#">
+									Item2
+								</a>
+								<a className="items" href="#">
+									Item3
+								</a>
+								<a className="items" href="#">
+									Item4
+								</a>
+								<a
+									className="icon"
+									href="#"
+									onClick={() => this.props.showMenu()}
+								>
+									<i className="fa fa-bars"></i>
+								</a>
+							</div>
+						);
+					} else {
+						return (
+							<div>
+								<div className="topnav">
+									<a className="homelogo" href="#">
+										Website Title/Logo
+									</a>
+									<a className="items" href="#">
+										Item1
+									</a>
+									<a className="items" href="#">
+										Item2
+									</a>
+									<a className="items" href="#">
+										Item3
+									</a>
+									<a className="items" href="#">
+										Item4
+									</a>
+									<a
+										className="icon"
+										href="#"
+										onClick={() => this.props.showMenu()}
+									>
+										<i className="fa fa-bars"></i>
+									</a>
+								</div>
+								<Menu />
+							</div>
+						);
+					}
+				}
+			}
+
+			class Menu extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { isToggleOn: this.props.isFlag };
+
+					// 綁定 this
+					this.handleClick = this.handleClick.bind(this);
+				}
+
+				handleClick(e) {
+					this.setState((prevState) => ({
+						isToggleOn: !prevState.isToggleOn,
+					}));
+				}
+
+				render() {
+					console.log("menu open");
+					return (
+						<div
+							className="menu"
+							style={{
+								display: this.props.isFlag ? "block" : "none",
+							}}
+						>
+							<button
+								type="button"
+								onClick={() => this.props.showMenu()}
+								className="items close"
+							>
+								<i className="fa-solid fa-xmark" />
+							</button>
+							<a className="items" href="#">
+								Item1
+							</a>
+							<a className="items" href="#">
+								Item2
+							</a>
+							<a className="items" href="#">
+								Item3
+							</a>
+							<a className="items" href="#">
+								Item4
+							</a>
+						</div>
+					);
+				}
+			}
+
+			class Welcome extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { isToggleOn: true };
+
+					// 綁定 this
+					this.handleClick = this.handleClick.bind(this);
+				}
+
+				handleClick(e) {
+					this.setState((prevState) => ({
+						isToggleOn: !prevState.isToggleOn,
+					}));
+				}
+
+				render() {
+					return (
+						<section>
+							<div className="welcomeBox" onClick={this.handleClick}>
+								<h1>
+									{this.state.isToggleOn
+										? "Welcome Message"
+										: "Have a Good Time!"}
+								</h1>
+							</div>
+						</section>
+					);
+				}
+			}
+
+			const ContentBox1 = (props) => {
+				return (
+					<section className="contentLayer">
+						<h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+							Section Title
+						</h3>
+						<div className="container">
+							<div className="box">Contentbox1</div>
+							<div className="box">Contentbox2</div>
+							<div className="box">Contentbox3</div>
+							<div className="box">Contentbox4</div>
+						</div>
+					</section>
+				);
+			};
+
+			class ShowMore extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { isShow: false };
+
+					// 綁定 this
+					this.handleShowMore = this.handleShowMore.bind(this);
+				}
+				handleShowMore(e) {
+					this.setState((prevState) => ({
+						isShow: !prevState.isShow,
+					}));
+				}
+
+				render() {
+					if (this.state.isShow) {
+						return (
+							<div>
+								<ContentBox1 />
+								<section>
+									<div className="btnaction">
+										<button type="button" onClick={this.handleShowMore}>
+											Hide Content
+										</button>
+									</div>
+								</section>
+								<Hidden />
+							</div>
+						);
+					} else {
+						return (
+							<div>
+								<ContentBox1 />
+								<section>
+									<div className="btnaction">
+										<button type="button" onClick={this.handleShowMore}>
+											Show More Content
+										</button>
+									</div>
+								</section>
+							</div>
+						);
+					}
+				}
+			}
+
+			class Container extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { isMenuOn: false };
+
+					// 綁定 this
+					this.handleMenuClick = this.handleMenuClick.bind(this);
+				}
+				handleMenuClick(e) {
+					this.setState((prevState) => ({
+						isMenuOn: !prevState.isMenuOn,
+					}));
+				}
+				render() {
+					return (
+						<div>
+							<TopNav
+								isFlag={this.state.isMenuOn}
+								showMenu={this.handleMenuClick}
+							/>
+							<Welcome />
+							<ShowMore />
+							<Menu
+								isFlag={this.state.isMenuOn}
+								showMenu={this.handleMenuClick}
+							/>
+						</div>
+					);
+				}
+			}
+
+			const Hidden = (props) => {
+				return (
+					<section className="hiddenContent">
+						<div className="container">
+							<div className="box">Contentbox5</div>
+							<div className="box">Contentbox6</div>
+							<div className="box">Contentbox7</div>
+							<div className="box">Contentbox8</div>
+						</div>
+					</section>
+				);
+			};
+
+			const container = document.getElementById("root");
+			const root = ReactDOM.createRoot(container);
+			root.render(<Container />);
+		</script>
+		<!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+	</body>
+</html>
