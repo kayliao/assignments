@@ -11,12 +11,14 @@ enterPlace.addEventListener("keypress", function (event) {
 
 		let value = enterPlace.value;
 
-		let result = `<input type="checkbox" class="newTaskItem" />
-    <label class="strikethrough">${value}</label>`;
 		if (toDo.lastElementChild == null) {
+			let result = `<li><input type="checkbox" class="newTaskItem" />
+      <label class="strikethrough">${value}</label></li>`;
 			toDo.innerHTML = result;
 			enterPlace.value = "";
 		} else {
+			let result = `<input type="checkbox" class="newTaskItem" />
+      <label class="strikethrough">${value}</label>`;
 			let li = document.createElement("li");
 			// li.className = "item";
 			li.innerHTML = result;
